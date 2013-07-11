@@ -1,0 +1,59 @@
+import java.io.*;
+class Interest2 {
+public static void main(String args[]) {
+ try 
+ {
+  InputStreamReader istream=new InputStreamReader(System.in);
+  BufferedReader bufread=new BufferedReader(istream);
+  
+  System.out.print("Enter the type of Interest you need:");
+  String type=bufread.readLine(); 
+    
+    if(type.equalsIgnoreCase("simple interest")) 
+    {
+     System.out.println("Enter the amount:");
+     String amount=bufread.readLine();
+     System.out.println("Enter the interest rate:");
+     String interest=bufread.readLine();
+     System.out.println("Enter no of years:");
+     String years=bufread.readLine();
+     float am=Float.parseFloat(amount);
+     float i=Float.parseFloat(interest);
+     int y=Integer.parseInt(years);
+     float SI=am*i*y; 
+     System.out.println("Simple Interest is:" + SI);
+    } 
+     if(type.equalsIgnoreCase("compound interest")) 
+     { 
+      System.out.println("Enter the amount:");
+      String amount=bufread.readLine(); 
+      System.out.println("Enter the interest rate:");
+      String interest=bufread.readLine();
+      System.out.println("Enter no of years:");
+      String years=bufread.readLine();
+      float am=Float.parseFloat(amount);
+      float i=Float.parseFloat(interest);
+      int y=Integer.parseInt(years);
+      float temp=0;
+       for(int n=1;n<=y;n++) 
+       {
+        float CI=am*i*y;
+        temp+=CI;
+       }
+     System.out.println("Compound Interest is:" + temp);
+    }
+ }
+   catch (IOException err) {
+    System.out.println("Error reading line");
+   }
+   catch(NumberFormatException err) {
+    System.out.println("Error Converting Number");
+   }
+ }
+} 
+  
+ 
+   
+   
+   
+
